@@ -115,38 +115,47 @@ def perkalian():
 # ========================================================================================
 
 def halaman_login():
-    clear()
-    username = ['adi','Adi','iki','Uko','Iki','uko']
-    password = ['Hhhh','ukoggewe','ikiKu','haerudin']
-    token_auth = ['ksfdbjdjdjkbvjmdbl','gggaming','pythonituseru']
-    in_username = str(input("Username : "))
-    in_password = str(input("Password : "))
-    token_auths = str(input("Token    : "))
-    if in_username in username and in_password in password and token_auths in token_auth:
+    try:
         clear()
-        print("Login Sukses")
-        input("\nTekan Enter Untuk Melanjutkan ")
-        start()
-    elif in_username not in username and in_password in password and token_auths in token_auth: 
+        username = ['adi','Adi','iki','Uko','Iki','uko']
+        password = ['Hhhh','ukoggewe','ikiKu','haerudin']
+        token_auth = ['ksfdbjdjdjkbvjmdbl','gggaming','pythonituseru']
+        in_username = str(input("Username : "))
+        in_password = str(input("Password : "))
+        token_auths = str(input("Token    : "))
+        if in_username in username and in_password in password and token_auths in token_auth:
+            clear()
+            print("Login Sukses")
+            input("\nTekan Enter Untuk Melanjutkan ")
+            start()
+        elif in_username not in username and in_password in password and token_auths in token_auth: 
+            clear()
+            print("Username Salah")
+            input("\nTekan Enter Untuk Melanjutkan ")
+            halaman_login()
+        elif in_username in username and in_password not in password and token_auths in token_auth:
+            clear()
+            print("Password Salah")
+            input("\nTekan Enter Untuk Melanjutkan ")
+            halaman_login()
+        elif in_username in username and in_password in password and token_auths not in token_auth:
+            clear()
+            print("Token Auth Salah")
+            input("\nTekan Enter Untuk Melanjutkan ")
+            halaman_login()
+        else:
+            clear()
+            print("Inputan Yang Anda Masukan Salah")
+            input("\nTekan Enter Untuk Melanjutkan ")
+            halaman_login()
+    except KeyboardInterrupt:
         clear()
-        print("Username Salah")
-        input("\nTekan Enter Untuk Melanjutkan ")
+        input("Eits Anda Tidak Bisa Keluar Pake ctrl c\nUdah Login Dulu Aja ")
         halaman_login()
-    elif in_username in username and in_password not in password and token_auths in token_auth:
-        clear()
-        print("Password Salah")
-        input("\nTekan Enter Untuk Melanjutkan ")
-        halaman_login()
-    elif in_username in username and in_password in password and token_auths not in token_auth:
-        clear()
-        print("Token Auth Salah")
-        input("\nTekan Enter Untuk Melanjutkan ")
-        halaman_login()
-    else:
-        clear()
-        print("Inputan Yang Anda Masukan Salah")
-        input("\nTekan Enter Untuk Melanjutkan ")
-        halaman_login()
+    except EOFError:
+            clear()
+            input("Eits Anda Tidak Bisa Keluar Pake ctrl z\nUdah Login Dulu Aja ")
+            halaman_login()
 
 # ========================================================================================
 
@@ -182,7 +191,6 @@ def irit_boros():
         for Keterangan in sign:
             sys.stdout.write(Keterangan)
             sys.stdout.flush()
-            sleep(0.0001)
         input("\nTekan Enter Untuk Melanjutkan ")
         start()
     except ValueError:
@@ -421,7 +429,7 @@ Tekan Enter Untuk Melanjutkan '''
                     for sapalah in sapa_dia:
                         sys.stdout.write(sapalah)
                         sys.stdout.flush()
-                        sleep(random.random()*0.1)
+                        sleep(random.random()*0.0001)
                     input()
                     clear()
                     input(f'Memberikan {totalnya:,} Kepada Penjual ')
