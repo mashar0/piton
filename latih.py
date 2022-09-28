@@ -13,6 +13,7 @@ import calendar
 # ========================================================================================
 
 def clear():
+    """Hai Ini Adalah Docstring"""
     if platform == "linux" or platform == "linux2":
         sp.call("clear", shell=True)
     elif platform == "win32":
