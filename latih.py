@@ -24,15 +24,15 @@ def clear():
 def banner():
     banner = '''
     ===============================================
-    Script Latihan | Ctrl-c Untuk Exit
+    | Script Latihan | Ctrl-c Untuk Exit          |
     ===============================================
-    1 . Menampilkan Kalender
-    2 . Menampilkan Perkalian
-    3 . Halaman Login
-    4 . Program Irit Boros
-    5 . Timer Workout
-    6 . Penghitung Umur
-    7 . Menu Belanja
+    | [1]  Menampilkan kalender                   |
+    | [2]  Menampilkan Perkalian                  |
+    | [3]  Halaman Login                          |
+    | [4]  Program Irit Boros                     |
+    | [5]  Timer Workout                          |
+    | [6]  Penghitung Umur                        |
+    | [7]  Menu Belanja                           |
     ===============================================
     '''
     print(banner)
