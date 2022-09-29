@@ -13,7 +13,6 @@ import calendar
 # ========================================================================================
 
 def clear():
-    """Hai Ini Adalah Docstring"""
     if platform == "linux" or platform == "linux2":
         sp.call("clear", shell=True)
     elif platform == "win32":
@@ -65,7 +64,7 @@ def start():
         prog_tim()
     elif pilih == 6:
         umur()
-    elif pilih== 7:
+    elif pilih == 7:
         struk_belanja()
     else:
         start()
@@ -153,10 +152,6 @@ def halaman_login():
         clear()
         input("Eits Anda Tidak Bisa Keluar Pake ctrl c\nUdah Login Dulu Aja ")
         halaman_login()
-    except EOFError:
-            clear()
-            input("Eits Anda Tidak Bisa Keluar Pake ctrl z\nUdah Login Dulu Aja ")
-            halaman_login()
 
 # ========================================================================================
 
@@ -176,22 +171,20 @@ def irit_boros():
             Boros = "Irit"
         sign = f'''
 ===================================================
-    Keterangan :
-    BOROS  = PENGGUNAAN DI ATAS {jatahboros:,}
-    NORMAL = PENGGUNAAN RENTANG {jatahhari:,} - {jatahboros:,}
-    IRIT   = PENGGUNAAN DI BAWAH {jatahhari:,}
+|    Keterangan :                                 |
+|    BOROS  = PENGGUNAAN DI ATAS {jatahboros:,}   |
+|    NORMAL = PENGGUNAAN RENTANG {jatahhari:,} - {jatahboros:,}|
+|    IRIT   = PENGGUNAAN DI BAWAH {jatahhari:,}   |
 ===================================================
-    Nama           : {nama}
-    Uang Mingguan  : {jatahming:,}
-    Jatah Per Hari : {jatahhari:,}
-    Habis Hari Ini : {habis:,}
-    Boros / Tidak  : {Boros}
+|    Nama           : {nama}                      |
+|    Uang Mingguan  : {jatahming:,}               |
+|    Jatah Per Hari : {jatahhari:,}               |
+|    Habis Hari Ini : {habis:,}                   |
+|    Boros / Tidak  : {Boros}                     |
 ===================================================
         '''
         clear()
-        for Keterangan in sign:
-            sys.stdout.write(Keterangan)
-            sys.stdout.flush()
+        print(sign)
         input("\nTekan Enter Untuk Melanjutkan ")
         start()
     except ValueError:
