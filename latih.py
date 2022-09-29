@@ -171,16 +171,16 @@ def irit_boros():
             Boros = "Irit"
         sign = f'''
 ===================================================
-|    Keterangan :                                 |
-|    BOROS  = PENGGUNAAN DI ATAS {jatahboros:,}   |
-|    NORMAL = PENGGUNAAN RENTANG {jatahhari:,} - {jatahboros:,}|
-|    IRIT   = PENGGUNAAN DI BAWAH {jatahhari:,}   |
+    Keterangan :                                 
+    BOROS  = PENGGUNAAN DI ATAS {jatahboros:,}       
+    NORMAL = PENGGUNAAN RENTANG {jatahhari:,} - {jatahboros:,}|
+    IRIT   = PENGGUNAAN DI BAWAH {jatahhari:,}   
 ===================================================
-|    Nama           : {nama}                      |
-|    Uang Mingguan  : {jatahming:,}               |
-|    Jatah Per Hari : {jatahhari:,}               |
-|    Habis Hari Ini : {habis:,}                   |
-|    Boros / Tidak  : {Boros}                     |
+    Nama           : {nama}                      
+    Uang Mingguan  : {jatahming:,}               
+    Jatah Per Hari : {jatahhari:,}               
+    Habis Hari Ini : {habis:,}                   
+    Boros / Tidak  : {Boros}                     
 ===================================================
         '''
         clear()
