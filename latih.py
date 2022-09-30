@@ -104,7 +104,7 @@ def perkalian():
         clear()
         header = f"""
         ====================
-            Perkalian {input_perkalian}q
+            Perkalian {input_perkalian}
         ====================
         """
         print(header)
@@ -296,7 +296,6 @@ def umur():
         umur_tahun = umur_hari.days // 365
         umur_bulan = (umur_hari.days % 365) // 30
         bulan_lahir = hari_lahir.month
-        tanggalna_lahir = hari_lahir.day
         print(f"Kamu Lahir Pada    : {hari_lahir}")
         print(f"Di Hari            : {hari_lahir:%A}")
         print(f"Umur Kamu Saat Ini : {umur_tahun} Tahun {umur_bulan} Bulan\n")
@@ -321,7 +320,6 @@ def struk_belanja():
     list_harga = []
     list_belanja = {}
     def tabel():
-
         t = PrettyTable(["No","Menu","Harga"])
         t.add_row([1, "Bala-bala", "1.000"])
         t.add_row([2, "Cireng", "1.000"])
