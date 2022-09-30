@@ -102,9 +102,14 @@ def perkalian():
         input_perkalian = int(input("Perkalian    : "))
         input_line = int(input("Berapa Baris : "))
         clear()
-        print(f"Perkalian {input_perkalian}\n")
+        header = f"""
+        ====================
+            Perkalian {input_perkalian}q
+        ====================
+        """
+        print(header)
         for ulang in range(1, input_line+1):
-            print(input_perkalian,'x',ulang,'=',input_perkalian*ulang)
+            print(f"• {ulang} x {input_perkalian} = {input_perkalian*ulang}")
         input("\nTekan Enter Untuk Melanjutkan ")
         start()
     except ValueError:
@@ -171,16 +176,16 @@ def irit_boros():
             Boros = "Irit"
         sign = f'''
 ===================================================
-    Keterangan :                                 
-    BOROS  = PENGGUNAAN DI ATAS {jatahboros:,}       
+    Keterangan :
+    BOROS  = PENGGUNAAN DI ATAS {jatahboros:,}
     NORMAL = PENGGUNAAN RENTANG {jatahhari:,} - {jatahboros:,}|
-    IRIT   = PENGGUNAAN DI BAWAH {jatahhari:,}   
+    IRIT   = PENGGUNAAN DI BAWAH {jatahhari:,}
 ===================================================
-    Nama           : {nama}                      
-    Uang Mingguan  : {jatahming:,}               
-    Jatah Per Hari : {jatahhari:,}               
-    Habis Hari Ini : {habis:,}                   
-    Boros / Tidak  : {Boros}                     
+    Nama           : {nama}
+    Uang Mingguan  : {jatahming:,}
+    Jatah Per Hari : {jatahhari:,}
+    Habis Hari Ini : {habis:,}
+    Boros / Tidak  : {Boros}
 ===================================================
         '''
         clear()
@@ -209,10 +214,10 @@ def prog_tim():
                 jam = total_waktu // 60 // 60
                 menit = total_waktu // 60 % 60
                 detik = total_waktu % 60
-            else: 
+            else:
                 jam = 0
                 menit = total_waktu // 60 % 60
-                detik = total_waktu % 60 
+                detik = total_waktu % 60
             clear()
             print(f"Total Waktu : {jam} Jam {menit} Menit {detik} Detik")
             input("\nTekan Enter Untuk Melanjutkan ")
@@ -287,7 +292,7 @@ def umur():
         clear()
         print(banner_umur)
         hari_lahir = dt.date(tahun_lahir, bulan_lahir, tanggal_lahir)
-        umur_hari = saat_ini - hari_lahir 
+        umur_hari = saat_ini - hari_lahir
         umur_tahun = umur_hari.days // 365
         umur_bulan = (umur_hari.days % 365) // 30
         bulan_lahir = hari_lahir.month
