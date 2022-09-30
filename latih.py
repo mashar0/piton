@@ -333,7 +333,6 @@ def struk_belanja():
         t.add_row([10, "Comro", "1.000"])
         t.add_row([11, "Jumlahkan Pembelian",""])
         print(t)
-
     def startken_mang_otong():
         no_bal = 0
         no_cir = 0
