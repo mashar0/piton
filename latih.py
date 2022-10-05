@@ -355,7 +355,7 @@ def struk_belanja():
             if cek_batas != 0:
                 print("="*35)
             for list_beli in list_belanja:
-                print("- " + list_belanja.get(list_beli))
+                print("• " + list_belanja.get(list_beli))
             if cek_batas != 0:
                 print("="*35)
             tabel()
