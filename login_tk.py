@@ -1,21 +1,40 @@
 # ini adalah script belajar modul tkinter
 
-import tkinter as tk 
-from tkinter import ttk, messagebox
+from tkinter import *
+from tkinter import messagebox, ttk
 
-def jendela_login():
-    window = tk.Tk()
+user = ['adi','riko']
+pasw = ['haerudin','indra']
+
+def jendela_login():     
+    start = messagebox.askyesno(message="Copyright by ?")
+    if start == True:
+        pass
+    else:
+        exit()
+        
+    window = Tk()
     window.geometry("300x220")
     window.title("Login")
     window.configure(bg="white")
 
-    USERNAME = tk.StringVar()
-    PASSWORD = tk.StringVar()
-    def pp():
-        print(USERNAME.get())
-        print(PASSWORD.get())
+    USERNAME = StringVar()
+    PASSWORD = StringVar()
 
-    frame = ttk.Frame(window)
+    def pp():
+        if USERNAME.get() in user and PASSWORD.get() in pasw:
+            messagebox.showinfo(message="Login Sukses")
+            exit()
+        elif USERNAME.get() not in user and PASSWORD.get() in pasw:
+            messagebox.showinfo(message="Username Salah")
+        elif USERNAME.get() in user and PASSWORD.get() not in pasw:
+            messagebox.showinfo(message="Password Salah")
+        else:
+            messagebox.showinfo(message="Username dan Password Salah")
+        
+        
+
+    frame = Frame(window)
     frame.pack(padx=10, pady=10, expand=True, ipadx=100)
 
     label_username = ttk.Label(frame, text="Username")
@@ -27,6 +46,7 @@ def jendela_login():
     label_pasword.pack(padx=10, pady=7, expand=True, fill='x')
     input_password = ttk.Entry(frame, textvariable=PASSWORD)
     input_password.pack(padx=10, pady=5, expand=True, fill='x')
+
 
     login = ttk.Button(frame, text="Login", command=pp)
     login.pack(padx=10, pady=10, expand=True)
