@@ -1,4 +1,5 @@
 # ini adalah script belajar modul tkinter
+# jendela login dengan python tkinter
 
 from tkinter import *
 from tkinter import messagebox, ttk
