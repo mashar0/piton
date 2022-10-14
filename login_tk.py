@@ -4,8 +4,15 @@
 from tkinter import *
 from tkinter import messagebox, ttk
 
-user = ['adi','riko']
-pasw = ['haerudin','indra']
+kenalan = """
+Hallo Bro ,
+Selamat Datang Di Python Tk Interface ,
+
+github : https://github.com/adprm123
+"""
+
+user = ['adi','riko','adi permadi']
+pasw = ['haerudin','indra','riko mashar']
 
 def jendela_login():     
     start = messagebox.askyesno(message="Copyright by ?")
@@ -16,6 +23,7 @@ def jendela_login():
         
     window = Tk()
     window.geometry("300x220")
+    window.resizable(False, False)
     window.title("Login")
     window.configure(bg="white")
 
@@ -25,7 +33,17 @@ def jendela_login():
     def pp():
         if USERNAME.get() in user and PASSWORD.get() in pasw:
             messagebox.showinfo(message="Login Sukses")
-            exit()
+            window.destroy()
+            selamat_datang = Tk()
+            selamat_datang.geometry("300x200")
+            selamat_datang.resizable(False, False)
+            selamat_datang.title("Selamat Datang")
+            
+            ucapan = Label(selamat_datang, text=kenalan)
+            ucapan.pack(padx=10, pady=10, fill='x')
+
+
+            selamat_datang.mainloop()
         elif USERNAME.get() not in user and PASSWORD.get() in pasw:
             messagebox.showinfo(message="Username Salah")
         elif USERNAME.get() in user and PASSWORD.get() not in pasw:
