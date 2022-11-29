@@ -102,6 +102,7 @@ def perkalian():
     try:
         input_perkalian = int(input("Perkalian    : "))
         input_line = int(input("Berapa Baris : "))
+        jeda = len(str(input_perkalian))
         clear()
         header = f"""
         ====================
