@@ -1,5 +1,6 @@
 # ini adalah script latihan saya saat belajar python dasar 
 
+from shutil import get_terminal_size
 import random
 from sys import platform
 import sys
@@ -163,6 +164,7 @@ def halaman_login():
 # ====================================================================================================================================================
 
 def irit_boros():
+    lebar, tinggi = get_terminal_size()
     try:
         clear()
         nama = input("Nama           : ")
@@ -177,18 +179,18 @@ def irit_boros():
         elif habis <= jatahhari:
             Boros = "Irit"
         sign = f'''
-===================================================
+{'='*lebar}
     Keterangan :
     BOROS  = PENGGUNAAN DI ATAS {jatahboros:,}
-    NORMAL = PENGGUNAAN RENTANG {jatahhari:,} - {jatahboros:,}|
+    NORMAL = PENGGUNAAN RENTANG {jatahhari:,} - {jatahboros:,}
     IRIT   = PENGGUNAAN DI BAWAH {jatahhari:,}
-===================================================
+{'='*lebar}
     Nama           : {nama}
     Uang Mingguan  : {jatahming:,}
     Jatah Per Hari : {jatahhari:,}
     Habis Hari Ini : {habis:,}
     Boros / Tidak  : {Boros}
-===================================================
+{'='*lebar}
         '''
         clear()
         print(sign)
